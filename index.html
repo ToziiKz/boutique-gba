@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBA STORE | ÉDITION LIMITÉE</title>
+    
+    <meta property="og:title" content="GBA STORE | La nouvelle collection est sortie ⚽️">
+    <meta property="og:description" content="Découvrez les maillots et survêtements officiels du Groupement Bruche Ackerland.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/020617/FFFFFF?text=GBA+COLLECTION">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gba: {
+                            base: '#020617',   /* Fond très sombre (Bleu Nuit) */
+                            accent: '#2563eb', /* Bleu électrique vibrant */
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Anton', 'sans-serif'], /* Police TITRE Impactante */
+                        body: ['Inter', 'sans-serif'], /* Police Lecture */
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; }
+        h1, h2, h3, .impact-font { font-family: 'Anton', sans-serif; letter-spacing: 1px; }
+        
+        /* Effet de lueur en arrière plan */
+        .glow-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, rgba(2, 6, 23, 0) 50%);
+        }
+        
+        /* Carte "Verre" */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #2563eb;
+            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gba-accent selection:text-white overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-6 py-3">
+            <img src="./logo.png" alt="GBA Logo" class="h-10 md:h-12 w-auto">
+            
+            <a href="#shop" class="bg-white text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-gba-accent hover:text-white transition uppercase tracking-wider">
+                Accès Boutique
+            </a>
+        </div>
+    </nav>
+
+    <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        
+        <div class="absolute inset-0 glow-bg animate-pulse"></div>
+        
+        <img src="https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?q=80&w=2069&auto=format&fit=crop" 
+             class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale mix-blend-overlay">
+
+        <img src="./logo.png" 
+             alt="" 
+             class="absolute inset-0 w-full h-full object-contain object-center opacity-[0.07] grayscale scale-125 md:scale-150 pointer-events-none mix-blend-soft-light">
+
+        <div class="relative z-10 text-center px-4">
+            <p class="text-gba-accent font-bold tracking-[0.3em] uppercase mb-4 animate-bounce">Saison 2025 / 2026</p>
+            
+            <h1 class="text-6xl md:text-8xl uppercase leading-relaxed mb-6 mix-blend-lighten">
+                L'Esprit d'Équipe. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-600">À fleur de peau.</span>
+            </h1>
+            
+            <p class="max-w-lg mx-auto text-gray-400 mb-10 text-lg font-light">
+                Une nouvelle collection exclusive.
+                <br class="hidden md:inline">Conçue pour le terrain, taillée pour la victoire.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#shop" class="bg-gba-accent text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300 skew-x-[-10deg]">
+                    <span class="block skew-x-[10deg]">Commander</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="shop" class="max-w-7xl mx-auto px-4 py-24 relative">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl text-white opacity-90">LA COLLECTION</h2>
+            <a href="#" class="text-sm text-gray-500 underline hover:text-gba-accent mt-2 inline-block">Guide des tailles</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[800px]">
+            
+            <div class="glass-card md:col-span-1 md:row-span-2 rounded-3xl p-6 flex flex-col relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-gba-accent text-white font-bold px-4 py-2 rounded-bl-2xl z-20">BEST SELLER</div>
+                
+                <div class="flex-grow flex items-center justify-center mb-6 relative z-10">
+                    <img src="https://via.placeholder.com/400x500/000000/FFFFFF?text=MAILLOT+PNG" 
+                         alt="Maillot GBA" 
+                         class="w-full h-auto object-contain group-hover:scale-110 group-hover:rotate-3 transition duration-500 drop-shadow-2xl">
+                </div>
+                
+                <div class="relative z-10 mt-auto">
+                    <h3 class="text-3xl text-white mb-2">MAILLOT DOMICILE</h3>
+                    <p class="text-gray-400 text-sm mb-6">Technologie Dri-Fit. Badge brodé.</p>
+                    <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+                        <span class="text-2xl font-bold">35.00€</span>
+                        <a href="VOTRE_LIEN_FLEXIPAIEMENT_MAILLOT_ICI" target="_blank" class="bg-white text-black h-10 w-10 rounded-full flex items-center justify-center hover:bg-gba-accent hover:text-white transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card md:col-span-2 rounded-3xl p-8 relative overflow-hidden group flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/2 relative z-10">
+                    <h3 class="text-4xl text-white mb-4">TRAINING PACK</h3>
+                    <p class="text-gray-400 mb-6">Ensemble veste et pantalon. Conçu pour la performance par tous les temps.</p>
+                    <div class="flex items-center gap-6">
+                        <span class="text-3xl font-bold text-gba-accent">60.00€</span>
+                        <a href="VOTRE_LIEN_FLEXIPAIEMENT_SURVET_ICI" target="_blank" class="border border-white hover:bg-white hover:text-black px-6 py-2 rounded-full uppercase text-sm font-bold transition">
+                            Acheter maintenant
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center z-10">
+                     <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=SURVET+PNG" 
+                          alt="Survetement" 
+                          class="w-full object-contain group-hover:scale-105 transition duration-500 drop-shadow-2xl">
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 relative overflow-hidden group">
+                <div class="h-full flex flex-col">
+                    <div class="flex-grow flex items-center justify-center">
+                        <img src="https://via.placeholder.com/300x300/000000/FFFFFF?text=SAC+PNG" 
+                         alt="Sac" 
+                         class="w-3/4 object-contain group-hover:-rotate-6 transition duration-500 drop-shadow-2xl">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-2xl text-white">SAC À DOS</h3>
+                        <div class="flex justify-between items-center mt-2">
+                             <span class="text-xl text-gray-300">25.00€</span>
+                             <a href="VOTRE_LIEN_FLEXIPAIEMENT_SAC_ICI" target="_blank" class="text-gba-accent hover:text-white underline text-sm font-bold uppercase">Ajouter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gba-accent rounded-3xl p-6 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-black opacity-10 pattern-grid"></div>
+                <h3 class="text-2xl font-black uppercase mb-2 relative z-10">Paiement 100% Sécurisé</h3>
+                <p class="text-sm opacity-90 mb-4 relative z-10">Via HelloAsso & SumUp</p>
+                <div class="flex gap-2 relative z-10">
+                    <div class="bg-white/20 px-3 py-1 rounded text-xs">CB</div>
+                    <div class="bg-white/20 px-3 py-1 rounded text-xs">Visa</div>
+                    <div class="bg-white/20 px-3 py-1 rounded text-xs">Mastercard</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-sm">
+        <p class="mb-2">GBA STORE &copy; 2024. Designed for Champions.</p>
+        <p>Une question ? <a href="mailto:contact@gba-foot.com" class="text-gba-accent hover:text-white transition">contact@gba-foot.com</a></p>
+    </footer>
+
+</body>
+</html>
