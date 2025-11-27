@@ -56,10 +56,43 @@
             border-color: #2563eb;
             box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.3);
         }
+
+        /* --- AJOUT POUR LA BANDEROLE (CSS) --- */
+        :root { --banner-height: 48px; }
+        
+        #promo-banner {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: var(--banner-height);
+            background-color: #2563eb; /* Couleur accent du site */
+            color: white;
+            z-index: 100; /* Au dessus du menu */
+            display: flex; justify-content: center; align-items: center;
+            font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+            transform: translateY(-100%); /* Caché par défaut */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        #promo-banner.visible { transform: translateY(0); }
+        
+        /* Bouton fermer la banderole */
+        #banner-close {
+            position: absolute; right: 20px; background: none; border: none; 
+            color: white; font-size: 20px; cursor: pointer; opacity: 0.7;
+        }
+        #banner-close:hover { opacity: 1; }
+
+        /* Animation du Menu quand la banderole est là */
+        nav { transition: transform 0.4s ease; }
+        body.has-banner nav { transform: translateY(var(--banner-height)); }
+        /* ------------------------------------- */
+
     </style>
 </head>
 <body class="antialiased selection:bg-gba-accent selection:text-white overflow-x-hidden">
 
+    <div id="promo-banner">
+        <span>📢 Livraison offerte dès 80€ d'achat !</span>
+        <button id="banner-close">&times;</button>
+    </div>
     <nav class="fixed top-0 w-full z-50 px-4 md:px-6 py-4 md:py-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-4 md:px-6 py-3">
             
@@ -194,6 +227,27 @@
         <p>Une question ? <a href="mailto:contact@gba-foot.com" class="text-gba-accent hover:text-white transition">contact@gba-foot.com</a></p>
     </footer>
 
-</body>
-</html>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bannerId = 'promo-gba-v1'; // Identifiant de la promo
+            const banner = document.getElementById('promo-banner');
+            const closeBtn = document.getElementById('banner-close');
 
+            // Vérifie si l'utilisateur a déjà fermé la pub
+            if (!localStorage.getItem(bannerId)) {
+                setTimeout(() => {
+                    banner.classList.add('visible');
+                    document.body.classList.add('has-banner');
+                }, 500); // Petit délai pour l'animation
+            }
+
+            // Action quand on clique sur la croix
+            closeBtn.addEventListener('click', () => {
+                banner.classList.remove('visible');
+                document.body.classList.remove('has-banner');
+                localStorage.setItem(bannerId, 'true'); // On s'en souvient
+            });
+        });
+    </script>
+    </body>
+</html>
